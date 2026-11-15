@@ -1,0 +1,11 @@
+Classification report (test set, threshold 0.5)
+
+              precision    recall  f1-score   support
+
+      NORMAL     0.9721    0.7436    0.8426       234
+   PNEUMONIA     0.8652    0.9872    0.9222       390
+
+    accuracy                         0.8958       624
+   macro avg     0.9186    0.8654    0.8824       624
+weighted avg     0.9053    0.8958    0.8923       624
+

@@ -1,0 +1,67 @@
+{
+  "architecture": "DenseNet121 (ImageNet) + CBAM -> GlobalAveragePooling2D -> Dropout -> Dense(1, sigmoid)",
+  "model_file": "saved_models/best_pneumonia_model.keras",
+  "input": {
+    "shape": [
+      null,
+      224,
+      224,
+      3
+    ],
+    "dtype": "float32",
+    "channels": "RGB",
+    "value_range": "0-255 (normalisation is inside the model)"
+  },
+  "output": {
+    "shape": [
+      null,
+      1
+    ],
+    "meaning": "P(PNEUMONIA), sigmoid"
+  },
+  "layer_names": {
+    "preprocess": "densenet_preprocess",
+    "backbone": "densenet121",
+    "head": [
+      "cbam",
+      "gap",
+      "head_dropout",
+      "classifier"
+    ]
+  },
+  "custom_layers": [
+    "DenseNetPreprocess",
+    "ChannelAttention",
+    "SpatialAttention",
+    "CBAM"
+  ],
+  "hyperparameters": {
+    "batch_size": 16,
+    "dropout": 0.4,
+    "cbam_reduction_ratio": 16,
+    "cbam_kernel_size": 7,
+    "stage1": {
+      "learning_rate": 0.0001,
+      "max_epochs": 15,
+      "patience": 4
+    },
+    "stage2": {
+      "learning_rate": 1e-05,
+      "max_epochs": 15,
+      "patience": 4,
+      "unfrozen_from_layer_prefix": "conv5_block1",
+      "batchnorm_frozen": true
+    },
+    "monitor": "val_auc",
+    "loss": "binary_crossentropy",
+    "optimizer": "Adam",
+    "class_weights": {
+      "0": 1.951310861423221,
+      "1": 0.672258064516129
+    }
+  },
+  "parameters": {
+    "total": 7170788
+  },
+  "selected_model": "stage 2 (fine-tuned)"
+}

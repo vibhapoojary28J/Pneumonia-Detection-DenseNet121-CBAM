@@ -1,0 +1,16 @@
+# Pneumonia Detection - DenseNet121 + CBAM
+# Python 3.10-3.13 recommended. Versions are intentionally not pinned: pip picks a mutually compatible set.
+# GPU: native Windows TensorFlow >= 2.11 is CPU-only. For the RTX 3050 use WSL2 and install
+#      "tensorflow[and-cuda]" instead of plain "tensorflow" (see README).
+
+tensorflow>=2.16
+kagglehub>=0.3
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn>=1.3
+pillow
+jupyter
+ipykernel
+streamlit

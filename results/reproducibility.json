@@ -1,0 +1,36 @@
+{
+  "created": "2026-11-15T22:07:28",
+  "seed": 42,
+  "python": "3.10.0",
+  "platform": "Windows-10-10.0.26100-SP0",
+  "tensorflow": "2.20.0",
+  "keras": "3.12.0",
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "scikit_learn": "1.7.2",
+  "matplotlib": "3.10.7",
+  "gpu_available": false,
+  "gpus": [],
+  "dataset": {
+    "kaggle_handle": "paultimothymooney/chest-xray-pneumonia",
+    "root": "C:\\Users\\Vibha Poojary\\.cache\\kagglehub\\datasets\\paultimothymooney\\chest-xray-pneumonia\\versions\\2\\chest_xray"
+  },
+  "split": {
+    "strategy": "train+val merged, exact duplicates removed, stratified + patient-grouped 80:20; test untouched",
+    "train": 4168,
+    "validation": 1038,
+    "test": 624,
+    "dev_duplicates_removed": 26,
+    "dev_images_identical_to_test_removed": 0,
+    "split_file": "results/data_splits.csv"
+  },
+  "training_minutes": {
+    "stage1": 26.17,
+    "stage2": 22.56
+  },
+  "epochs_run": {
+    "stage1": 11,
+    "stage2": 9
+  },
+  "note": "Deterministic GPU kernels were not enforced, so re-runs can differ slightly."
+}
